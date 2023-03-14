@@ -52,11 +52,14 @@ body {
     left: 50%;
     transform: translate(-50%, -50%); /* It will shift half of the width to left side and 50% of the element's height to the top*/  
     /* background-color: red; */
+    text-align: center;
 }
 
 .heading-primary {
     color: #fff;
     text-transform: uppercasex;
+    backface-visibility: hidden; /* if back part of the element when we transform it is visible or hidden for user */
+    margin-bottom: 60px;
 }
 
 .heading-primary-main {
@@ -65,6 +68,13 @@ body {
     font-size: 60px;
     font-weight: 400;
     letter-spacing: 35px;
+    /* These are 2 prop for animation */
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    /* Other pro of animation */
+    /* animation-delay: 3s; 
+    /* animation-iteration-count: 3; */
+    animation-timing-function: ease-out; /* it defines how animation will proceed */
 }
 
 .heading-primary-sub {
@@ -72,4 +82,111 @@ body {
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 17.4px;
+    animation: moveInRight 1s ease-out;
+}
+
+/* Animation */
+@keyframes moveInLeft {
+    /* start */
+    0% {
+        opacity: 0; /*invisible */
+        transform: translateX(-100px); /* direction goes left to right */
+    }
+
+    80% {
+        transform: translateX(10px);
+    }
+
+    /* finish */
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    /* start */
+    0% {
+        opacity: 0; /*invisible */
+        transform: translateX(100px); /* direction goes left to right */
+    }
+
+    80% {
+        transform: translateX(-10px);
+    }
+
+    /* finish */
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInBottom {
+    /* start */
+    0% {
+        opacity: 0; /*invisible */
+        transform: translateY(30px); /* direction goes left to right */
+    }
+
+    /* finish */
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+/* here link is a pseudo-class, it's the link pseudo class they are special state of selector */
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none; /* remove the line from link */
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all 0.2s;
+    position: relative;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* X Y blury */
+}
+
+.btn:active{
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+    background-color: white;
+    color: #777;
+}
+
+.btn::after {
+    /* In order for an after pseudo-element to actually appear on the page we use content prop */
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* defines the position of element if they are on top of another */
+    transition: all 0.4s;
+}
+
+.btn-white::after {
+    background-color: white;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0; /*for fade */
+}
+
+.btn-animated {
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards; /* automatically apply the styles up to 0% before animation starts */
 }
