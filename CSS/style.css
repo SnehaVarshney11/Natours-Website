@@ -1,0 +1,60 @@
+/* Colors :
+
+Light Green - #7ed56f
+Medium Green - #55c57a
+Dark Green - #28b485 
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* border and padding are no longer added to total width or total height that we specify for a box*/
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #777;
+    padding: 30px;
+}
+
+.header {
+    height: 95vh; /* 95% viewport height*/
+    position: relative;
+    /* We use background-image for using gradient */
+    /* To change the visibilty of img we take the opacity as 0.8 */
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(126, 213, 111, 0.8), 
+        rgba(40, 180, 131, 0.8)),
+    url(/Img/hero.jpg);
+    background-size: cover; /* fit the img into viewport height */
+    background-position: top; /* top portion of the img stays the same */
+    /* Use to change the shape of img */
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+
+.logo-box {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+.logo {
+    height: 35px;
+}
+
+.heading-primary {
+    color: #fff;
+    text-transform: uppercasex;
+}
+
+.heading-primary-main {
+    padding: 50px;
+}
+
+.heading-primary-sub {
+
+}
