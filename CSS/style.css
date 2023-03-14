@@ -46,15 +46,30 @@ body {
     height: 35px;
 }
 
+.text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* It will shift half of the width to left side and 50% of the element's height to the top*/  
+    /* background-color: red; */
+}
+
 .heading-primary {
     color: #fff;
     text-transform: uppercasex;
 }
 
 .heading-primary-main {
-    padding: 50px;
+    /* block creates a block by which both headings are in different lines */
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 35px;
 }
 
 .heading-primary-sub {
-
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 17.4px;
 }
