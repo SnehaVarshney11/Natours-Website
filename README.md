@@ -19,10 +19,10 @@ Neg value means - it goes to left
 * <b> What happens To CSS when we Load Up a Web Page ? </b>
 <img src = '/ImagesReadme/LoadWebPage.png' alt = 'What happens To CSS when we Load Up a Web Page'>
 
-* <b><ul> What is Cascade ? </ul></b> <br>
+* <b>What is Cascade ?</b> <br>
 Process of combining different stylesheets and resolving conflicts between different CSS rules and declarations, when more than one rule applies to certain elements. 
 
-* <b><ul> What  are <b>em</b> and <b>rem</b> and why we use them? </ul></b> <br>
+* <b>What  are <b>em</b> and <b>rem</b> and why we use them?</b> <br>
 em is a CSS unit relative to font size of the parent element, while rem is a CSS unit relative to font size of html element. Both are scalable units, meaning they gives us the ability to scale elements up and down, relative to a set value. The difference between them is that em use the parent or current element as a reference while rems use the root font-size as the reference. rems aren't supported below Internet Explorer 9. 
 
 * Inline styles have highest specificity followed by IDs then classes, pseudo classes and attributes selector and least specific the element and pseudo element selector
@@ -33,4 +33,63 @@ em is a CSS unit relative to font size of the parent element, while rem is a CSS
         <div class="header__logo-box"> //element__element 
 <h1 class="heading-primary">
         <span class="heading-primary--main"> //element--modifier
+```
 
+* <b>Cascade and Specificity : WHAT YOU NEED TO KNOW</b><br>
+⁕ CSS declaration marked with <b>!important</b> have highest priority. <br>
+⁕ Inline styles will always have priority over styles in external stylesheets. <br>
+⁕ A selector that contains 1 ID is more specific than one with 1000 classes. <br>
+⁕ A selector that contains 1 class is more specific than one with 1000 elements. <br>
+⁕ The universal selector * has no specific value (0,0,0,0). 
+
+* What is specificity in css ? <br>
+Specificity is an algorithm that calculates the weight that is applied to a given CSS declaration. The weight is determined by the number of selectors of each weight category in the selector matching the element (or pseudo-element).
+<img src = '/ImagesReadme/Specificity.png' alt = 'Specificity'>
+<img src = '/ImagesReadme/Parsed_CSS.png' alt = 'Parsed_CSS'>
+
+* <b>Use of !important -</b>
+<img src = '/ImagesReadme/Not_!imp.png' alt = 'Not_!important'>
+<img src = '/ImagesReadme/!imp.png' alt = '!important'>
+
+* <b>How CSS values are Processed ?</b> 
+<img src = '/ImagesReadme/CSS Value1.png' alt = 'CSS values are Processed'>
+<img src = '/ImagesReadme/CSS Value2.png' alt = 'CSS values are Processed'>
+<img src = '/ImagesReadme/CSS Value3.png' alt = 'CSS values are Processed'>
+
+* <b>How Units are converted from relative to absolute (Px) :</b>
+<img src = '/ImagesReadme/Units To Px.png' alt = 'CSS values are Processed'>
+
+* <b>CSS Value Processing : WHAT YOU NEED TO KNOW</b><br>
+⁕ Each property has an initial value, used if nothing is declared (and if there is no inheritance). <br>
+⁕ Browsers specify a <b>root font-size</b> for each page (usually 16px).<br>
+⁕ Percentages and relative values are always converted to pixels.<br>
+⁕ vh and vw are simply percentage measurements of the viewport's height and width.<br>
+⁕ rem are always measured relative to the <b>document's root</b> font-size.<br>
+⁕ em are measured relative to the current font-size, if used to specify lengths.<br>
+⁕ em are measured relative to their parent font-size, if used to specify font-size.<br>
+⁕ Percentages are measured relative to their parent's width, if used to specify lengths.<br>
+⁕ Percentages are measured relative to their parent's font-size, if used to specify font-size.<br>
+
+* Inheritence - 
+<img src = '/ImagesReadme/Inheritence.png' alt = 'Inheritence'>
+
+* <b>Inheritence : WHAT YOU NEED TO KNOW</b><br>
+⁕ Inheritance passes the values for some specific properties from parents to children - more maintainable code.<br>
+⁕ Inheritance of a property only works if no one declares a value for that property.<br>
+⁕ The computed value of a property is what gets inherited, not the declared value.<br>
+⁕ The inherit keyword forces inheritance on a certain property.<br>
+⁕ The initial keyword resets a property to its initial value.<br>
+⁕ Properties related to text are inherited: font-family, font-size, color, etc.<br>
+
+* <b>What is VISUAL FORMATTING MODEL ? </b> <br>
+Algorithm that calculates boxes and determines the layout of these boxes, for each element in the render tree, in order to determine the final layout of the page. 
+<img src = '/ImagesReadme/VFM.png' alt = 'VISUAL FORMATTING MODEL'>
+<img src = '/ImagesReadme/BoxModel.png' alt = 'Box Model'>
+<img src = '/ImagesReadme/BoxModel2.png' alt = 'Box Model'>
+<img src = '/ImagesReadme/BoxType.png' alt = 'Box Type'>
+<img src = '/ImagesReadme/BoxType.png' alt = 'Box Type'>
+<img src = '/ImagesReadme/BoxType2.png' alt = 'Box Type'>
+<img src = '/ImagesReadme/BoxType2.png' alt = 'Box Type'>
+<img src = '/ImagesReadme/PS.png' alt = 'Positining Scheme'>
+<img src = '/ImagesReadme/Stacking Context.png' alt = 'Stacking Context'>
+<img src = '/ImagesReadme/Stacking Context.png' alt = 'Stacking Context'>
