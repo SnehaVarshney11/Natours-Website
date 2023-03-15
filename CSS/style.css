@@ -5,19 +5,26 @@ Medium Green - #55c57a
 Dark Green - #28b485 
 */
 
-* {
+* ,
+*::after,
+*::before{
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* border and padding are no longer added to total width or total height that we specify for a box*/
+    box-sizing: inherit;
+}
+    
+html {
+    font-size: 62.5%; /* 10px = 1rem  and 100% = 16rem we want 10px so 10/16 = .62 => 62.5%*/
 }
 
 body {
     font-family: "Lato", sans-serif;
     font-weight: 400;
-    font-size: 16px;
+    /* font-size: 16px; */
     line-height: 1.7;
     color: #777;
-    padding: 30px;
+    padding: 3rem;
+    box-sizing: border-box; /* border and padding are no longer added to total width or total height that we specify for a box*/
 }
 .header {
     height: 95vh; /* 95% viewport height*/
@@ -35,17 +42,17 @@ body {
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 }
 
-.logo-box {
+.header__logo-box {
     position: absolute;
-    top: 40px;
-    left: 40px;
+    top: 4rem;
+    left: 4rem;
 }
 
-.logo {
-    height: 35px;
+.header__logo {
+    height: 3.5rem;
 }
 
-.text-box {
+.header__text-box {
     position: absolute;
     top: 40%;
     left: 50%;
@@ -59,15 +66,15 @@ body {
     color: #fff;
     text-transform: uppercasex;
     backface-visibility: hidden; /* if back part of the element when we transform it is visible or hidden for user */
-    margin-bottom: 60px;
+    margin-bottom: 6rem;
 }
 
-.heading-primary-main {
+.heading-primary--main {
     /* block creates a block by which both headings are in different lines */
     display: block;
-    font-size: 60px;
+    font-size: 6rem;
     font-weight: 400;
-    letter-spacing: 35px;
+    letter-spacing: 3.5rem;
     /* These are 2 prop for animation */
     animation-name: moveInLeft;
     animation-duration: 1s;
@@ -77,11 +84,11 @@ body {
     animation-timing-function: ease-out; /* it defines how animation will proceed */
 }
 
-.heading-primary-sub {
+.heading-primary--sub {
     display: block;
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 700;
-    letter-spacing: 17.4px;
+    letter-spacing: 1.75rem;
     animation: moveInRight 1s ease-out;
 }
 
@@ -90,11 +97,11 @@ body {
     /* start */
     0% {
         opacity: 0; /*invisible */
-        transform: translateX(-100px); /* direction goes left to right */
+        transform: translateX(-10rem); /* direction goes left to right */
     }
 
     80% {
-        transform: translateX(10px);
+        transform: translateX(1rem);
     }
 
     /* finish */
@@ -108,11 +115,11 @@ body {
     /* start */
     0% {
         opacity: 0; /*invisible */
-        transform: translateX(100px); /* direction goes left to right */
+        transform: translateX(10rem); /* direction goes left to right */
     }
 
     80% {
-        transform: translateX(-10px);
+        transform: translateX(-1rem);
     }
 
     /* finish */
@@ -126,7 +133,7 @@ body {
     /* start */
     0% {
         opacity: 0; /*invisible */
-        transform: translateY(30px); /* direction goes left to right */
+        transform: translateY(3rem); /* direction goes left to right */
     }
 
     /* finish */
@@ -141,24 +148,25 @@ body {
 .btn:visited {
     text-transform: uppercase;
     text-decoration: none; /* remove the line from link */
-    padding: 15px 40px;
+    padding: 1.5rem 4rem;
     display: inline-block;
-    border-radius: 100px;
+    border-radius: 10rem;
     transition: all 0.2s;
     position: relative;
+    font-size: 1.6rem;
 }
 
 .btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* X Y blury */
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); /* X Y blury */
 }
 
 .btn:active{
     transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
-.btn-white {
+.btn--white {
     background-color: white;
     color: #777;
 }
@@ -169,15 +177,15 @@ body {
     display: inline-block;
     height: 100%;
     width: 100%;
-    border-radius: 100px;
+    border-radius: 10rem;
     position: absolute;
-    top: 0;
+    top: 0; 
     left: 0;
     z-index: -1; /* defines the position of element if they are on top of another */
     transition: all 0.4s;
 }
 
-.btn-white::after {
+.btn--white::after {
     background-color: white;
 }
 
@@ -186,7 +194,8 @@ body {
     opacity: 0; /*for fade */
 }
 
-.btn-animated {
+.btn--animated {
     animation: moveInBottom .5s ease-out .75s;
     animation-fill-mode: backwards; /* automatically apply the styles up to 0% before animation starts */
 }
+
