@@ -1,95 +1,72 @@
-$color-primary : #7ed56f;
-$color-primary-light : #55c57a;
-$color-primary-dark : #28b485;
-$color-grey-dark: #777;
-$color-white : #fff;
+@import "abstract/function";
+@import "abstract/mixins";
+@import "abstract/variable";
+
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+
+@import "pages/home";
 
 
-* ,
-*::after,
-*::before{
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-}
-    
-html {
-    font-size: 62.5%; /* 10px = 1rem  and 100% = 16rem we want 10px so 10/16 = .62 => 62.5%*/
-}
 
-body {
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    /* font-size: 16px; */
-    line-height: 1.7;
-    color: $color-grey-dark;
-    padding: 3rem;
-    box-sizing: border-box; /* border and padding are no longer added to total width or total height that we specify for a box*/
-}
+
 .header {
-    height: 95vh; /* 95% viewport height*/
+    height: 95vh; 
     position: relative;
-    /* We use background-image for using gradient */
-    /* To change the visibilty of img we take the opacity as 0.8 */
     background-image: linear-gradient(
         to right bottom,
         rgba($color-primary-light, 0.8), 
         rgba($color-primary-dark, 0.8)),
     url(/Img/hero.jpg);
-    background-size: cover; /* fit the img into viewport height */
-    background-position: top; /* top portion of the img stays the same */
-    /* Use to change the shape of img */
+    background-size: cover; 
+    background-position: top; 
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-}
 
-.header__logo-box {
-    position: absolute;
-    top: 4rem;
-    left: 4rem;
+    // Use Sass here
+    &__logo-box {
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+    }
+    &__logo {
+        height: 3.5rem;
+    }
+    
+    &__text-box {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%); 
+        text-align: center;
+    }
+    
 }
-
-.header__logo {
-    height: 3.5rem;
-}
-
-.header__text-box {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* It will shift half of the width to left side and 50% of the element's height to the top*/  
-    /* background-color: red; */
-    text-align: center;
-}
-
 
 .heading-primary {
     color: $color-white;
     text-transform: uppercasex;
-    backface-visibility: hidden; /* if back part of the element when we transform it is visible or hidden for user */
+    backface-visibility: hidden; 
     margin-bottom: 6rem;
-}
 
-.heading-primary--main {
-    /* block creates a block by which both headings are in different lines */
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3.5rem;
-    /* These are 2 prop for animation */
-    animation-name: moveInLeft;
-    animation-duration: 1s;
-    /* Other pro of animation */
-    /* animation-delay: 3s; 
-    /* animation-iteration-count: 3; */
-    animation-timing-function: ease-out; /* it defines how animation will proceed */
-}
-
-.heading-primary--sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.75rem;
-    animation: moveInRight 1s ease-out;
+    &--main {
+        display: block;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 3.5rem;
+        animation-name: moveInLeft;
+        animation-duration: 1s;
+        animation-timing-function: ease-out; 
+    }
+    
+    &--sub {
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1.75rem;
+        animation: moveInRight 1s ease-out;
+    }
 }
 
 /* Animation */
@@ -143,61 +120,59 @@ body {
     }
 }
 
-/* here link is a pseudo-class, it's the link pseudo class they are special state of selector */
-.btn:link,
-.btn:visited {
-    text-transform: uppercase;
-    text-decoration: none; /* remove the line from link */
-    padding: 1.5rem 4rem;
-    display: inline-block;
-    border-radius: 10rem;
-    transition: all 0.2s;
-    position: relative;
-    font-size: 1.6rem;
-}
+.btn {
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none; 
+        padding: 1.5rem 4rem;
+        display: inline-block;
+        border-radius: 10rem;
+        transition: all 0.2s;
+        position: relative;
+        font-size: 1.6rem;
+    }
 
-.btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); /* X Y blury */
-}
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.2); 
 
-.btn:active{
-    transform: translateY(-1px);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-}
+        &::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0; 
+        }
+    }
 
+    &:active{
+        transform: translateY(-1px);
+        box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+    }
 
+    &--white {
+        background-color: $color-white;
+        color: $color-grey-dark;
 
-.btn--white {
-    background-color: $color-white;
-    color: $color-grey-dark;
-}
+        &::after {
+            background-color: $color-white;
+        }
+    }
 
-.btn::after {
-    /* In order for an after pseudo-element to actually appear on the page we use content prop */
-    content: "";
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 10rem;
-    position: absolute;
-    top: 0; 
-    left: 0;
-    z-index: -1; /* defines the position of element if they are on top of another */
-    transition: all 0.4s;
-}
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        top: 0; 
+        left: 0;
+        z-index: -1; 
+        transition: all 0.4s;
+    }
 
-.btn--white::after {
-    background-color: $color-white;
-}
-
-.btn:hover::after {
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0; /*for fade */
-}
-
-.btn--animated {
-    animation: moveInBottom .5s ease-out .75s;
-    animation-fill-mode: backwards; /* automatically apply the styles up to 0% before animation starts */
+    &--animated {
+        animation: moveInBottom .5s ease-out .75s;
+        animation-fill-mode: backwards; 
+    }
 }
 
