@@ -1,0 +1,22 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "Landing page for natours",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SnehaVarshney11/Natours-Website.git"
+  },
+  "author": "Sneha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SnehaVarshney11/Natours-Website/issues"
+  },
+  "homepage": "https://github.com/SnehaVarshney11/Natours-Website#readme",
+  "devDependencies": {
+    "node-sass": "^8.0.0"
+  }
+}
