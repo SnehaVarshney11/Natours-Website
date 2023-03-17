@@ -1,0 +1,33 @@
+.row {
+    max-width : $grid-width;
+    background-color: #eee;
+    margin: 0 auto; /* to center block element */
+    
+    &:not(:last-child){
+        margin-bottom: $gutter-vertical;
+    }
+
+    @include clearfix;
+
+    // attribute selector
+    [class ^= "col-"] {
+        background-color: orangered;
+        float: left;
+        
+        &:not(:last-child) {
+            margin-right: $gutter-horizontal;
+        }
+    }
+
+    .col-1-of-2 {
+        width: calc((100% - #{$gutter-horizontal}) / 2);
+    }
+
+    .col-1-of-3 {
+        width: calc((100% - 2 *  #{$gutter-horizontal}) / 3);
+    }
+
+    .col-2-of-3 {
+        width: calc( 2 * ((100% - 2 *  #{$gutter-horizontal}) / 3) + #{$gutter-horizontal});
+    }
+}
