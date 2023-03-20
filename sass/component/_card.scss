@@ -3,11 +3,12 @@
     perspective: 150rem;
     -moz-perspective: 150rem;
     position: relative;
-    height: 45rem;
+    height: 51rem;
 
     &__side {
         transition: all .8s ease;
         position: absolute;
+        height : 51rem;
         top: 0;
         left: 0;
         width: 100%;
@@ -25,6 +26,14 @@
 
             &-1 {
                 background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+            }
+
+            &-2 {
+                background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+            }
+
+            &-3 {
+                background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
             }
         }
     }
@@ -44,17 +53,19 @@
         background-blend-mode: screen;
         -webkit-clip-path : polygon(0 0, 100% 0, 100% 85%, 0 100%);
         clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
         
         &--1 {
             background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url(/Img/nat-5.jpg);
         }
 
         &--2 {
-            background-image: url(/Img/nat-5.jpg);
+            background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark), url(/Img/nat-6.jpg);
         }
 
         &--3 {
-            background-image: url(/Img/nat-5.jpg);
+            background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark), url(/Img/nat-7.jpg);
         }
     }
 
@@ -67,6 +78,72 @@
         text-align: right;
         top: 12rem;
         right: 2rem;
+        width: 75%;
     }
 
-}
+    &__heading-span {
+        padding: 1rem 1.5rem;
+        //Apply all the decoration that we have in the selector (like padding) to all of the boxes.
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+        &--1 {
+            background-image: linear-gradient(to right bottom, rgba($color-secondary-light, .85), 
+            rgba($color-secondary-dark, .85));
+        }
+
+        &--2 {
+            background-image: linear-gradient(to right bottom, rgba($color-primary-light, .85), 
+            rgba($color-primary-dark, .85));
+        }
+
+        &--3 {
+            background-image: linear-gradient(to right bottom, rgba($color-tertiary-light, .85), 
+            rgba($color-tertiary-dark, .85));
+        }
+    }
+
+    &__details {
+        padding: 3rem;
+
+        ul {
+            list-style: none;
+            width: 80%;
+            margin: 0 auto;
+
+            li {
+                text-align: center;
+                font-size: 1.5rem;
+                padding: 1rem;
+                
+                &:not(:last-child){
+                    border-bottom: 1px solid $color-grey-ligth-2;
+                }
+            }   
+        }
+    }
+
+    //BACK SIDE STYLING
+    &__cta {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 90%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    &__price-box {
+        text-align: center;
+        margin-bottom: 8rem;
+        color: $color-white;
+    }
+
+    &__price-only {
+        font-size: 1.4rem;
+        text-transform: uppercase;
+    }
+
+    &__price-value {
+        font-size: 6rem;
+        font-weight: 100;
+    }
