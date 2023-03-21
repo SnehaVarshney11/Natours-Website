@@ -1,8 +1,7 @@
 .navigation {
     &__checkbox {
-
+        
     }
-
     &__button {
         background-color: $color-white;
         height: 7rem;
@@ -77,5 +76,9 @@
             color: $color-primary;
             transform: translateX(1rem);
         }
+    }
+
+    &__checkbox:checked ~ &__background {
+        transform: scale(80);
     }
 }
