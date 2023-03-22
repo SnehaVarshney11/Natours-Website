@@ -124,6 +124,7 @@
     &__button:hover &__icon::after {
         top: 1rem;
     }
+    
     // When we click on button change the icon to cross 
     &__checkbox:checked + &__button &__icon {
         background-color: transparent;
