@@ -34,6 +34,8 @@ $breakpoint argument choices -
 -- tab-land
 -- big-desktop
 
+ORDER: Base + Typography > general layout + grid > page layout > Component
+
 1em = 16px
 */
 @mixin respond($breakpoint) {
@@ -51,6 +53,6 @@ $breakpoint argument choices -
     }
 
     @if $breakpoint == big-desktop {
-        @media (max-width: 112.5em) { @content }; //1800px
+        @media (min-width: 112.5em) { @content }; //1800px
     }
 }
