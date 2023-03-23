@@ -41,7 +41,7 @@
     }
 
     // adjecent sibling
-    &__input:placeholder-shown ~ &__label{
+    &__input:placeholder-shown + &__label{
         opacity: 0;
         visibility: hidden;
         transform: translateY(-4rem);
@@ -53,7 +53,7 @@
     }
 
     &__radio-input {
-        // display: none;
+        display: none;
     }
 
     &__radio-label {
@@ -90,6 +90,9 @@
         } 
     }
 
+
+
+    // When we click on text it will show that radio button which i made 
     &__radio-input:checked ~ &__radio-label &__radio-btn::after {
         opacity: 1;
     }
