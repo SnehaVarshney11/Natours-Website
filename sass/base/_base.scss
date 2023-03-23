@@ -10,7 +10,34 @@
     
 html {
     // This define what 1rem is
-    font-size: 62.5%; 
+    font-size: 62.5%; //1rem = 10px  10px/16px = 62.5%
+     
+    // FOR RESPONSIVENESS
+    // All these media queries are same
+
+    // @media (max-width : 600px) {
+    //    font-size: 50%;
+    // }
+
+    // @include respond-phone {
+    //     font-size: 50%;
+    // }
+
+    @include respond(phone) {
+        font-size: 50%;
+    }
+
+    @include respond(tab-port) {
+        font-size: 60%;
+    }
+
+    @include respond(tab-land) {
+        font-size: 50%; //1 rem = 8px   8/16 = 50%
+    }
+
+    @include respond(big-desktop) {
+        font-size: 80%;
+    }
 }
 
 body {
