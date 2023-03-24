@@ -48,3 +48,9 @@ body {
         padding: 0;
     }
 }
+
+//OWN STYLE
+::selection {
+    background-color: $color-primary;
+    color: $color-white;
+}
