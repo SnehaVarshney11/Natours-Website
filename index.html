@@ -79,13 +79,32 @@
                 </div>
                 <div class="col-1-of-2">
                     <div class="composition">
-                        <img src="/Img/nat-1-large.jpg" alt="photo1" class="composition__photo composition__photo--p1">
+
+                        <!-- Width descriptor method to make responsive image in HTML -->
+                        <img srcset="/Img/nat-1.jpg 300w, /Img/nat-1-large.jpg 1000w" 
+                            sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+                            alt="Photo1"
+                            class="composition__photo composition__photo--p1"
+                            src="/Img/nat-1-large.jpg">
+
+                        <img srcset="/Img/nat-2-large.jpg 300w, /Img/nat-2-large.jpg 1000w" 
+                            sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+                            alt="Photo2"
+                            class="composition__photo composition__photo--p2"
+                            src="/Img/nat-2-large.jpg">
+
+                        <img srcset="/Img/nat-3.jpg 300w, /Img/nat-3-large.jpg 1000w" 
+                            sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+                            alt="Photo3"
+                            class="composition__photo composition__photo--p3"
+                            src="/Img/nat-3-large.jpg">
+
+                        <!-- <img src="/Img/nat-1-large.jpg" alt="photo1" class="composition__photo composition__photo--p1">
                         <img src="/Img/nat-2-large.jpg" alt="photo2" class="composition__photo composition__photo--p2">
-                        <img src="/Img/nat-3-large.jpg" alt="photo3" class="composition__photo composition__photo--p3">
+                        <img src="/Img/nat-3-large.jpg" alt="photo3" class="composition__photo composition__photo--p3"> -->
                     </div>
                 </div>
             </div>
-            
         </section>
 
         <section class="section-features">
@@ -345,7 +364,17 @@
 
     <footer class="footer">
         <div class="footer__logo-box">
-            <img src="/Img/logo-green-2x.png" alt="Full logo" class="footer__logo">
+
+            <!-- Art Direction method to make responsive image in HTML -->            
+            <picture class="footer__logo">
+                <source srcset="/Img/logo-green-small-1x.png 1x, /Img/logo-green-small-2x.png 2x," 
+                    media = "(max-width : 37.5em)">
+                <img srcset ="/Img/logo-green-1x.png 1x, /Img/logo-green-2x.png 2x" alt="Full logo" 
+                    class="footer__logo" src="/Img/logo-green-2x.png">
+            </picture>
+
+            <!-- Density Switching method to make responsive image in HTML -->
+            <!-- <img srcset ="/Img/logo-green-1x.png 1x, /Img/logo-green-2x.png 2x" alt="Full logo" class="footer__logo"> -->
         </div>
         <div class="row">
             <div class="col-1-of-2">

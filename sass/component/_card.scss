@@ -154,127 +154,45 @@
     /*************************** RESPONSIVE  ***********************/
     @include respond(tab-port) {
         height: auto;
-
-
-
+        border-radius: 3px;
+        background-color: $color-white;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+        
         &__side {
             position: relative;
             height : auto;
-            border-radius: 3px;
+            box-shadow: none;
 
             &--back {
                 transform: rotateY(0);
+                clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
             }
         }
 
         &:hover &__side--front{
-            transform: rotateY(-180deg);
-        }
-
-        &:hover &__side--back{
             transform: rotateY(0);
         }
 
-        //FRONT SIDE STYLING
-        &__picture {
-            background-size: cover;
-            height: 23rem;
-            background-blend-mode: screen;
-            -webkit-clip-path : polygon(0 0, 100% 0, 100% 85%, 0 100%);
-            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-            border-top-left-radius: 3px;
-            border-top-right-radius: 3px;
-
-            &--1 {
-                background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url(/Img/nat-5.jpg);
-            }
-
-            &--2 {
-                background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark), url(/Img/nat-6.jpg);
-            }
-
-            &--3 {
-                background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark), url(/Img/nat-7.jpg);
-            }
-        }
-
-        &__heading {
-            font-size: 2.8rem;
-            font-weight: 300;
-            text-transform: uppercase;
-            color: $color-white;
-            position: absolute;
-            text-align: right;
-            top: 12rem;
-            right: 2rem;
-            width: 75%;
-        }
-
-        &__heading-span {
-            padding: 1rem 1.5rem;
-            //Apply all the decoration that we have in the selector (like padding) to all of the boxes.
-            -webkit-box-decoration-break: clone;
-            box-decoration-break: clone;
-            &--1 {
-                background-image: linear-gradient(to right bottom, rgba($color-secondary-light, .85), 
-                rgba($color-secondary-dark, .85));
-            }
-
-            &--2 {
-                background-image: linear-gradient(to right bottom, rgba($color-primary-light, .85), 
-                rgba($color-primary-dark, .85));
-            }
-
-            &--3 {
-                background-image: linear-gradient(to right bottom, rgba($color-tertiary-light, .85), 
-                rgba($color-tertiary-dark, .85));
-            }
-        }
-
         &__details {
-            padding: 3rem;
-
-            ul {
-                list-style: none;
-                width: 80%;
-                margin: 0 auto;
-
-                li {
-                    text-align: center;
-                    font-size: 1.5rem;
-                    padding: 1rem;
-
-                    &:not(:last-child){
-                        border-bottom: 1px solid $color-grey-ligth-2;
-                    }
-                }   
-            }
+            padding: 1rem 3rem;
         }
 
         //BACK SIDE STYLING
         &__cta {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 90%;
-            transform: translate(-50%, -50%);
-            text-align: center;
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            transform: translate(0);
+            padding: 7rem 4rem 4rem 4rem;
         }
 
         &__price-box {
-            text-align: center;
-            margin-bottom: 8rem;
-            color: $color-white;
-        }
-
-        &__price-only {
-            font-size: 1.4rem;
-            text-transform: uppercase;
+            margin-bottom: 3rem;
         }
 
         &__price-value {
-            font-size: 6rem;
-            font-weight: 100;
+            font-size: 4rem;
         }
     }
 }
