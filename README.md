@@ -93,3 +93,56 @@ Algorithm that calculates boxes and determines the layout of these boxes, for ea
 <img src = '/ImagesReadme/PS.png' alt = 'Positining Scheme'>
 <img src = '/ImagesReadme/Stacking Context.png' alt = 'Stacking Context'>
 <img src = '/ImagesReadme/Stacking Context.png' alt = 'Stacking Context'>
+
+# SASS 
+* SASS is a CSS preprocessor, an extension of CSS that add power and elegance to the basic language.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sass Compiler <br>
+&nbsp;&nbsp;&nbsp; SASS SOURCE CODE ---------------------> COMPILED CSS CODE <br>
+
+### Mixin ->
+A mixin is just a reusable piece of code that we write into a mixin. Whenever we use mixin that code is put in the place where we used or where we called that mixin. Mixin is used where code is repeated. we can pass an argument in mixin; if we want.
+@mixin name(argument)
+```
+ex- nav {
+    color: pink;
+    padding: 8px; 
+    height: 16vh;
+}
+a {
+   color: pink;
+    padding: 8px; 
+    height: 16vh;
+}
+nav and a both have the same thing. Here we can use mixin.
+
+@mixin qualities {
+    color: pink;
+    padding: 8px; 
+    height: 16vh;
+}
+
+now use this -
+nav {
+   @include qualities;
+}
+a {
+   @include qualities;
+}
+```
+
+# FUNCTION ->
+Functions allow you to define complex operations on SassScript values that you can re-use throughout your stylesheet. They make it easy to abstract out common formulas and behaviors in a readable way.
+```
+@function divide($a, $b){
+  @return $a/$b;
+}
+```
+
+# PLACEHOLDER ->
+SASS supports placeholder selector using class or id selector. In normal CSS, these are specified with "#" or ".", but in SASS they are replaced with "%". To work with placeholder selector, they can be used with @extend directive. Without using @extend directive, you cannot display the result in CSS.
+
+### What is the difference between mixin and extend in Sass?
+@mixin is used to group css code that has to be reused a no of times. Whereas the @extend is used in SASS to inherit(share) the properties from another css selector.
+
+## 7-1 SASS Architecture
+7-1 SASS Pattern means 7 Folders and 1 FIle. 7 Folders have their meaningful labels which include sass snippets or partials. Outside the 7 folders, 1 file will include all the partials or snippets from 7 folders and compile it to 1 CSS file.
