@@ -220,3 +220,9 @@ The backdrop-filter property is used to apply a graphical effect to the area beh
 
 ### Selecting Breakpoints 
 <img src = '/ImagesReadme/Breakpoints.png' alt = 'Breakpoints'>
+
+### What are Responsive Image ?
+<img src = '/ImagesReadme/ResponsiveImage.png' alt = 'Responsive Image'>
+
+### When to use Responsive Image : The 3 Use Cases
+<img src = '/ImagesReadme/UseCase.png' alt = 'Responsive Image'>
