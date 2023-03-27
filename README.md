@@ -45,6 +45,15 @@ background-blend-mode : screen
 
 * <b>For removing the bottom line from links :- </b> text-decoration: none; 
 
+* In html we have figure tag where we can put an img and then some caption with a figcaption element.
+
+* If we want that paragraph to be in two columns then use <br>
+column-count : 2; <br>
+And for gap in columns then use <br>
+column-gap <br>
+And for the border between both columns use <br>
+column-rule : 1px solid color <br>
+
 * <b> CSS Rule </b>
 <img src = '/ImagesReadme/CSSRule.jfif' alt = 'CSS Rule'>
 
@@ -162,7 +171,7 @@ a {
 }
 ```
 
-# FUNCTION ->
+### FUNCTION ->
 Functions allow you to define complex operations on SassScript values that you can re-use throughout your stylesheet. They make it easy to abstract out common formulas and behaviors in a readable way.
 ```
 @function divide($a, $b){
@@ -170,17 +179,29 @@ Functions allow you to define complex operations on SassScript values that you c
 }
 ```
 
-# PLACEHOLDER ->
+### PLACEHOLDER ->
 SASS supports placeholder selector using class or id selector. In normal CSS, these are specified with "#" or ".", but in SASS they are replaced with "%". To work with placeholder selector, they can be used with @extend directive. Without using @extend directive, you cannot display the result in CSS.
 
 ### What is the difference between mixin and extend in Sass?
 @mixin is used to group css code that has to be reused a no of times. Whereas the @extend is used in SASS to inherit(share) the properties from another css selector.
 
-## 7-1 SASS Architecture
+### 7-1 SASS Architecture
 7-1 SASS Pattern means 7 Folders and 1 FIle. 7 Folders have their meaningful labels which include sass snippets or partials. Outside the 7 folders, 1 file will include all the partials or snippets from 7 folders and compile it to 1 CSS file.
 
-# Basic Responsive Design Principles
+### Main SASS Features
+<img src = '/ImagesReadme/Features.png' alt = 'SASS Features'>
+
+### SASS and SCSS 
+<img src = '/ImagesReadme/Difference.png' alt = 'SASS Vs SCSS '>
+
+### Basic Responsive Design Principles
 <img src = '/ImagesReadme/ResponsiveDesign.jpg' alt = 'Basic Responsive Design Principles'>
+
+### Responsive Design Strategy
+<img src = '/ImagesReadme/RDS.png' alt = 'Responsive Design Strategy'>
+
+### Types of Layouts
+<img src = '/ImagesReadme/Layout.png' alt = 'Types of Layouts'>
 
 ### Grid System
 A grid is just a design system which allows us to build consistent interfaces. 
@@ -188,3 +209,7 @@ A grid is just a design system which allows us to build consistent interfaces.
 * <b>If we want to use css with sass variable use # like this #{$variable_name}</b>
 
 * <b>CLEARFIX :- </b> Clearfix append a pseudo element after the element which will clear these floats.
+
+### BackDrop-Filter
+The backdrop-filter property is used to apply a graphical effect to the area behind an element.<br>
+<b>Syntax :- </b> backdrop-filter : blur(1px);
