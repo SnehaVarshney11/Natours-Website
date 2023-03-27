@@ -199,12 +199,16 @@ SASS supports placeholder selector using class or id selector. In normal CSS, th
 
 ### Responsive Design Strategy
 <img src = '/ImagesReadme/RDS.png' alt = 'Responsive Design Strategy'>
+<img src = '/ImagesReadme/Max-Min.png' alt = 'Max and Min'>
 
 ### Types of Layouts
 <img src = '/ImagesReadme/Layout.png' alt = 'Types of Layouts'>
 
 ### Grid System
 A grid is just a design system which allows us to build consistent interfaces. 
+
+### Is Mobile-First Right ?
+<img src = '/ImagesReadme/Mobile-First.png' alt = 'Mobile-First'>
 
 * <b>If we want to use css with sass variable use # like this #{$variable_name}</b>
 
@@ -213,3 +217,6 @@ A grid is just a design system which allows us to build consistent interfaces.
 ### BackDrop-Filter
 The backdrop-filter property is used to apply a graphical effect to the area behind an element.<br>
 <b>Syntax :- </b> backdrop-filter : blur(1px);
+
+### Selecting Breakpoints 
+<img src = '/ImagesReadme/Breakpoints.png' alt = 'Breakpoints'>
