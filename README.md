@@ -12,6 +12,38 @@ Neg value means - it goes to left
 
 * For animation to work there are 2 prop that we have to really specify which are called animation name and anmiation duration.
 
+* To centre block element use  <br>
+margin: 0 auto;
+
+* Emmet is an extension which allows us to write html code faster.
+
+* display: inline-block. This will contain space only that text not full
+
+* <b>Put the gradient into text :- </b> <br>
+-webkit-background-clip : text; <br>
+color : transparent;
+
+* If there are more than one photos and we want them together then use positive absolute
+
+* Using z-index we can specify the stack order of an element
+
+* <b>When we want to show img in the entire page :- </b> <br>
+background-size : cover ;
+
+* Perspective property is used to give 3d positioned element some perspective.
+
+* backface-visibility : hidden; &nbsp; Hides the back part of an element
+
+* <b>Used to apply gradient on picture :-</b> <br>
+background-blend-mode : screen 
+
+* object-fit : cover; The element will fill the entire parent while still maintaining its aspect ratio
+
+* .row:last-child() select the last child but .row:not(:last-child) select everything except last child
+
+* If there are 2 radio buttons and we want one of them is selected then other one is not. For this, give the same name of both radio buttons
+
+* <b>For removing the bottom line from links :- </b> text-decoration: none; 
 
 * <b> CSS Rule </b>
 <img src = '/ImagesReadme/CSSRule.jfif' alt = 'CSS Rule'>
@@ -146,3 +178,13 @@ SASS supports placeholder selector using class or id selector. In normal CSS, th
 
 ## 7-1 SASS Architecture
 7-1 SASS Pattern means 7 Folders and 1 FIle. 7 Folders have their meaningful labels which include sass snippets or partials. Outside the 7 folders, 1 file will include all the partials or snippets from 7 folders and compile it to 1 CSS file.
+
+# Basic Responsive Design Principles
+<img src = '/ImagesReadme/ResponsiveDesign.jpg' alt = 'Basic Responsive Design Principles'>
+
+### Grid System
+A grid is just a design system which allows us to build consistent interfaces. 
+
+* <b>If we want to use css with sass variable use # like this #{$variable_name}</b>
+
+* <b>CLEARFIX :- </b> Clearfix append a pseudo element after the element which will clear these floats.
